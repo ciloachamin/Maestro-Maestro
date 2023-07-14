@@ -14,6 +14,13 @@ Este repositorio contiene instrucciones y scripts para configurar la replicació
 1. Abrir el archivo `postgresql.conf` en el nodo Master1.
 2. Buscar y modificar los siguientes parámetros:
 
+<pre>
+```python
+def hola_mundo():
+    print("Hola, mundo!")
+```
+</pre> 
+
 listen_addresses = '*'
 wal_level = 'logical'
 max_worker_processes = 20
