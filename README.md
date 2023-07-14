@@ -220,4 +220,4 @@ synchronize_data := true
 
 
 
-Basado en la documentacion de Replicacion Maestro-Esclavo ❤️ by @davidcasr
+Basado en la documentacion de Replicacion Maestro-Esclavo  by @davidcasr
