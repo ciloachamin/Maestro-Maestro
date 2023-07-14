@@ -34,8 +34,7 @@ Ejecutar el siguiente comando para iniciar los contenedores:
 
 Aquí tienes el contenido completo para un archivo README:
 
-markdown
-Copy code
+
 # Configuración de Replicación con pglogical
 
 Este repositorio contiene instrucciones y scripts para configurar la replicación utilizando pglogical en PostgreSQL.
@@ -93,17 +92,17 @@ Ejecutar los scripts necesarios para crear la base de datos y las tablas en el n
 
 Ejecutar los siguientes scripts en el nodo Master1:
 
-
+<pre> 
 CREATE EXTENSION IF NOT EXISTS pglogical;
-
--- Crear un nodo proveedor
+</pre> 
+Crear un nodo proveedor
 <pre> 
 SELECT pglogical.create_node(
 node_name := 'provider-node',
 dsn := 'host=provider-db port=5432 dbname=restaurante user=provider password=provider'
 );
 </pre> 
--- Agregar todas las tablas del esquema "public" al conjunto de replicación predeterminado.
+Agregar todas las tablas del esquema "public" al conjunto de replicación predeterminado.
 <pre> 
 SELECT pglogical.replication_set_add_all_tables(
 set_name := 'default',
@@ -129,12 +128,12 @@ docker-compose up
 1. Abrir pgAdmin.
 2. Crear una nueva conexión con los siguientes detalles:
 <pre> 
-Name: Subscriber
-Host: localhost
-Port: 5440
-Maintenance database: restaurante
-Username: subscriber
-Password: subscriber
+    Name: Subscriber
+    Host: localhost
+    Port: 5440
+    Maintenance database: restaurante
+    Username: subscriber
+    Password: subscriber
 </pre> 
 
 3. Guardar la conexión.
@@ -147,12 +146,12 @@ Ejecutar los scripts necesarios para crear la base de datos y las tablas en el n
 
 Ejecutar los siguientes scripts en el nodo Subscriber:
 <pre> 
-Name: Subscriber
-Host: localhost
-Port: 5440
-Maintenance database: restaurante
-Username: subscriber
-Password: subscriber
+    Name: Subscriber
+    Host: localhost
+    Port: 5440
+    Maintenance database: restaurante
+    Username: subscriber
+    Password: subscriber
 </pre> 
 
 3. Guardar la conexión.
